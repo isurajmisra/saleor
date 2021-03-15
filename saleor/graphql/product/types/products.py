@@ -53,7 +53,9 @@ from ...order.dataloaders import (
     OrderByIdLoader,
     OrderLinesByVariantIdAndChannelIdLoader,
 )
-from ...product.dataloaders.products import AvailableProductVariantsByProductVariantId
+from ...product.dataloaders.products import (
+    AvailableProductVariantsByProductVariantIdAndChannel,
+)
 from ...translations.fields import TranslationField
 from ...translations.types import (
     CategoryTranslation,
@@ -738,9 +740,11 @@ class Product(ChannelContextTypeWithMetadata, CountableDjangoObjectType):
                 return variants
 
             variants_id = (variant.id for variant in variants)
-            variant_channel_listings = AvailableProductVariantsByProductVariantId(
-                info.context
-            ).load((root.channel_slug, variants_id))
+            variant_channel_listings = (
+                AvailableProductVariantsByProductVariantIdAndChannel(info.context).load(
+                    (root.channel_slug, variants_id)
+                )
+            )
 
             def return_available_variants(available_variants):
                 result = []

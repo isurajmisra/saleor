@@ -93,14 +93,14 @@ def filter_products_by_attributes(qs, filter_value, channel_slug):
 def filter_products_by_variant_price(qs, channel_slug, price_lte=None, price_gte=None):
     if price_lte:
         qs = qs.filter(
-            variants__channel_listings__price_amount__lte=price_lte,
-            variants__channel_listings__price_amount__isnull=False,
+            Q(variants__channel_listings__price_amount__lte=price_lte)
+            | Q(variants__channel_listings__price_amount__isnull=True),
             variants__channel_listings__channel__slug=channel_slug,
         )
     if price_gte:
         qs = qs.filter(
-            variants__channel_listings__price_amount__gte=price_gte,
-            variants__channel_listings__price_amount__isnull=False,
+            Q(variants__channel_listings__price_amount__gte=price_gte)
+            | Q(variants__channel_listings__price_amount__isnull=True),
             variants__channel_listings__channel__slug=channel_slug,
         )
     return qs
@@ -148,7 +148,6 @@ def filter_products_by_stock_availability(qs, stock_availability, channel_slug=N
         .filter(
             total_available__lte=0,
             product_variant__channel_listings__channel__slug=channel_slug,
-            product_variant__channel_listings__price_amount__isnull=False,
         )
         .values_list("product_variant__product_id", flat=True)
     )
