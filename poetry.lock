@@ -50,7 +50,7 @@ optional = false
 python-versions = ">=3.6"
 
 [package.extras]
-tests = ["pytest", "pytest-asyncio", "mypy (>=0.800)"]
+tests = ["mypy (>=0.800)", "pytest", "pytest-asyncio"]
 
 [[package]]
 name = "astroid"
@@ -81,10 +81,10 @@ optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
 [package.extras]
-dev = ["coverage[toml] (>=5.0.2)", "hypothesis", "pympler", "pytest (>=4.3.0)", "six", "mypy", "pytest-mypy-plugins", "zope.interface", "furo", "sphinx", "sphinx-notfound-page", "pre-commit"]
-docs = ["furo", "sphinx", "zope.interface", "sphinx-notfound-page"]
-tests = ["coverage[toml] (>=5.0.2)", "hypothesis", "pympler", "pytest (>=4.3.0)", "six", "mypy", "pytest-mypy-plugins", "zope.interface"]
-tests_no_zope = ["coverage[toml] (>=5.0.2)", "hypothesis", "pympler", "pytest (>=4.3.0)", "six", "mypy", "pytest-mypy-plugins"]
+dev = ["coverage[toml] (>=5.0.2)", "furo", "hypothesis", "mypy", "pre-commit", "pympler", "pytest (>=4.3.0)", "pytest-mypy-plugins", "six", "sphinx", "sphinx-notfound-page", "zope.interface"]
+docs = ["furo", "sphinx", "sphinx-notfound-page", "zope.interface"]
+tests = ["coverage[toml] (>=5.0.2)", "hypothesis", "mypy", "pympler", "pytest (>=4.3.0)", "pytest-mypy-plugins", "six", "zope.interface"]
+tests_no_zope = ["coverage[toml] (>=5.0.2)", "hypothesis", "mypy", "pympler", "pytest (>=4.3.0)", "pytest-mypy-plugins", "six"]
 
 [[package]]
 name = "authorizenet"
@@ -223,7 +223,7 @@ cffi = ">=1.1.0"
 
 [package.extras]
 doc = ["sphinx", "sphinx-rtd-theme"]
-test = ["pytest-runner", "pytest-cov", "pytest-flake8", "pytest-isort"]
+test = ["pytest-cov", "pytest-flake8", "pytest-isort", "pytest-runner"]
 xcb = ["xcffib (>=0.3.2)"]
 
 [[package]]
@@ -243,7 +243,7 @@ tinycss2 = "*"
 
 [package.extras]
 doc = ["sphinx", "sphinx-rtd-theme"]
-test = ["pytest-runner", "pytest-cov", "pytest-flake8", "pytest-isort"]
+test = ["pytest-cov", "pytest-flake8", "pytest-isort", "pytest-runner"]
 
 [[package]]
 name = "celery"
@@ -363,7 +363,7 @@ python-versions = "*"
 click = ">=4.0"
 
 [package.extras]
-dev = ["pytest (>=3.6)", "pytest-cov", "wheel", "coveralls"]
+dev = ["coveralls", "pytest (>=3.6)", "pytest-cov", "wheel"]
 
 [[package]]
 name = "click-repl"
@@ -423,7 +423,7 @@ webencodings = "*"
 
 [package.extras]
 doc = ["sphinx", "sphinx-rtd-theme"]
-test = ["pytest", "pytest-cov", "pytest-flake8", "pytest-isort", "coverage"]
+test = ["coverage", "pytest", "pytest-cov", "pytest-flake8", "pytest-isort"]
 
 [[package]]
 name = "defusedxml"
@@ -502,10 +502,10 @@ optional = false
 python-versions = "*"
 
 [package.extras]
-dev = ["tox", "black", "django", "pytest", "pytest-django", "djangorestframework", "graphene-django"]
-maintainer = ["transifex-client", "zest.releaser", "django"]
+dev = ["black", "django", "djangorestframework", "graphene-django", "pytest", "pytest-django", "tox"]
+maintainer = ["django", "transifex-client", "zest.releaser"]
 pyuca = ["pyuca"]
-test = ["pytest", "pytest-django", "pytest-cov", "graphene-django"]
+test = ["graphene-django", "pytest", "pytest-cov", "pytest-django"]
 
 [[package]]
 name = "django-debug-toolbar"
@@ -600,14 +600,14 @@ django-js-asset = "*"
 
 [[package]]
 name = "django-phonenumber-field"
-version = "5.1.0"
+version = "6.4.0"
 description = "An international phone number field for django models."
 category = "main"
 optional = false
-python-versions = ">=3.6"
+python-versions = ">=3.7"
 
 [package.dependencies]
-Django = ">=2.2"
+Django = ">=3.2"
 
 [package.extras]
 phonenumbers = ["phonenumbers (>=7.0.2)"]
@@ -746,7 +746,7 @@ python-versions = "*"
 urllib3 = "*"
 
 [package.extras]
-dev = ["pre-commit", "pytest", "mock"]
+dev = ["mock", "pre-commit", "pytest"]
 
 [[package]]
 name = "enmerkar"
@@ -1021,7 +1021,7 @@ six = ">=1.10.0,<2"
 [package.extras]
 django = ["graphene-django"]
 sqlalchemy = ["graphene-sqlalchemy"]
-test = ["pytest", "pytest-benchmark", "pytest-cov", "pytest-mock", "snapshottest", "coveralls", "promise", "six", "mock", "pytz", "iso8601"]
+test = ["coveralls", "iso8601", "mock", "promise", "pytest", "pytest-benchmark", "pytest-cov", "pytest-mock", "pytz", "six", "snapshottest"]
 
 [[package]]
 name = "graphene-django"
@@ -1041,9 +1041,9 @@ six = ">=1.10.0"
 unidecode = ">=1.1.1,<2"
 
 [package.extras]
-dev = ["black (==19.10b0)", "flake8 (==3.7.9)", "flake8-black (==0.1.1)", "flake8-bugbear (==20.1.4)", "pytest (>=3.6.3)", "pytest-cov", "coveralls", "mock", "pytz", "pytest-django (>=3.3.2)", "djangorestframework (>=3.6.3)", "django-filter (<2)", "django-filter (>=2)"]
+dev = ["black (==19.10b0)", "coveralls", "django-filter (<2)", "django-filter (>=2)", "djangorestframework (>=3.6.3)", "flake8 (==3.7.9)", "flake8-black (==0.1.1)", "flake8-bugbear (==20.1.4)", "mock", "pytest (>=3.6.3)", "pytest-cov", "pytest-django (>=3.3.2)", "pytz"]
 rest_framework = ["djangorestframework (>=3.6.3)"]
-test = ["pytest (>=3.6.3)", "pytest-cov", "coveralls", "mock", "pytz", "pytest-django (>=3.3.2)", "djangorestframework (>=3.6.3)", "django-filter (<2)", "django-filter (>=2)"]
+test = ["coveralls", "django-filter (<2)", "django-filter (>=2)", "djangorestframework (>=3.6.3)", "mock", "pytest (>=3.6.3)", "pytest-cov", "pytest-django (>=3.3.2)", "pytz"]
 
 [[package]]
 name = "graphene-federation"
@@ -1071,7 +1071,7 @@ six = ">=1.10.0"
 
 [package.extras]
 gevent = ["gevent (>=1.1)"]
-test = ["six (==1.14.0)", "pyannotate (==1.2.0)", "pytest (==4.6.10)", "pytest-django (==3.9.0)", "pytest-cov (==2.8.1)", "coveralls (==1.11.1)", "cython (==0.29.17)", "gevent (==1.5.0)", "pytest-benchmark (==3.2.3)", "pytest-mock (==2.0.0)"]
+test = ["coveralls (==1.11.1)", "cython (==0.29.17)", "gevent (==1.5.0)", "pyannotate (==1.2.0)", "pytest (==4.6.10)", "pytest-benchmark (==3.2.3)", "pytest-cov (==2.8.1)", "pytest-django (==3.9.0)", "pytest-mock (==2.0.0)", "six (==1.14.0)"]
 
 [[package]]
 name = "graphql-relay"
@@ -1147,7 +1147,7 @@ beautifulsoup4 = ">4.7,<4.8"
 lxml = "*"
 
 [package.extras]
-dev = ["pre-commit", "mock", "pytest"]
+dev = ["mock", "pre-commit", "pytest"]
 
 [[package]]
 name = "html2text"
@@ -1170,7 +1170,7 @@ six = ">=1.9"
 webencodings = "*"
 
 [package.extras]
-all = ["genshi", "chardet (>=2.2)", "lxml"]
+all = ["chardet (>=2.2)", "genshi", "lxml"]
 chardet = ["chardet (>=2.2)"]
 genshi = ["genshi"]
 lxml = ["lxml"]
@@ -1222,9 +1222,9 @@ optional = false
 python-versions = ">=3.6,<4.0"
 
 [package.extras]
-pipfile_deprecated_finder = ["pipreqs", "requirementslib"]
-requirements_deprecated_finder = ["pipreqs", "pip-api"]
 colors = ["colorama (>=0.4.3,<0.5.0)"]
+pipfile_deprecated_finder = ["pipreqs", "requirementslib"]
+requirements_deprecated_finder = ["pip-api", "pipreqs"]
 
 [[package]]
 name = "jaeger-client"
@@ -1241,7 +1241,7 @@ thrift = "*"
 tornado = ">=4.3"
 
 [package.extras]
-tests = ["mock (==1.0.1)", "pycurl (>=7.43,<8)", "pytest (>=3.7.0,<3.8.0)", "pytest-cov (==2.5.1)", "coverage (<4.4)", "pytest-timeout (==1.3.1)", "pytest-tornado", "pytest-benchmark[histogram] (>=3.0.0rc1,<3.2)", "pytest-localserver", "flake8", "flake8-quotes", "codecov", "opentracing_instrumentation (>=3,<4)", "prometheus_client (==0.3.1)", "tchannel (>=0.27)"]
+tests = ["codecov", "coverage (<4.4)", "flake8", "flake8-quotes", "mock (==1.0.1)", "opentracing_instrumentation (>=3,<4)", "prometheus_client (==0.3.1)", "pycurl (>=7.43,<8)", "pytest (>=3.7.0,<3.8.0)", "pytest-benchmark[histogram] (>=3.0.0rc1,<3.2)", "pytest-cov (==2.5.1)", "pytest-localserver", "pytest-timeout (==1.3.1)", "pytest-tornado", "tchannel (>=0.27)"]
 
 [[package]]
 name = "jinja2"
@@ -1326,7 +1326,7 @@ typing-extensions = ">=3.7.4.2"
 typing-inspect = ">=0.4.0"
 
 [package.extras]
-dev = ["black (==20.8b1)", "codecov (>=2.1.4)", "coverage (>=4.5.4)", "fixit (==0.1.1)", "flake8 (>=3.7.8)", "hypothesis (>=4.36.0)", "hypothesmith (>=0.0.4)", "isort (==5.5.3)", "jupyter (>=1.0.0)", "nbsphinx (>=0.4.2)", "pyre-check (==0.0.41)", "sphinx-rtd-theme (>=0.4.3)", "prompt-toolkit (>=2.0.9)", "tox (>=3.18.1)"]
+dev = ["black (==20.8b1)", "codecov (>=2.1.4)", "coverage (>=4.5.4)", "fixit (==0.1.1)", "flake8 (>=3.7.8)", "hypothesis (>=4.36.0)", "hypothesmith (>=0.0.4)", "isort (==5.5.3)", "jupyter (>=1.0.0)", "nbsphinx (>=0.4.2)", "prompt-toolkit (>=2.0.9)", "pyre-check (==0.0.41)", "sphinx-rtd-theme (>=0.4.3)", "tox (>=3.18.1)"]
 
 [[package]]
 name = "lxml"
@@ -1405,7 +1405,7 @@ optional = false
 python-versions = "*"
 
 [package.extras]
-develop = ["pytest (>=4.6)", "pycodestyle", "pytest-cov", "codecov", "wheel"]
+develop = ["codecov", "pycodestyle", "pytest (>=4.6)", "pytest-cov", "wheel"]
 tests = ["pytest (>=4.6)"]
 
 [[package]]
@@ -1481,7 +1481,7 @@ optional = false
 python-versions = "*"
 
 [package.extras]
-tests = ["doubles", "flake8", "flake8-quotes", "mock", "pytest", "pytest-cov", "pytest-mock", "sphinx", "sphinx-rtd-theme", "six (>=1.10.0,<2.0)", "gevent", "tornado"]
+tests = ["doubles", "flake8", "flake8-quotes", "gevent", "mock", "pytest", "pytest-cov", "pytest-mock", "six (>=1.10.0,<2.0)", "sphinx", "sphinx-rtd-theme", "tornado"]
 
 [[package]]
 name = "packaging"
@@ -1514,7 +1514,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 avro = ["fastavro (>=0.24.0)"]
 bcolz = ["bcolz (>=1.2.1)"]
 db = ["SQLAlchemy (>=1.3.6)"]
-hdf5 = ["cython (>=0.29.13)", "numpy (>=1.16.4)", "numexpr (>=2.6.9)", "tables (>=3.5.2)"]
+hdf5 = ["cython (>=0.29.13)", "numexpr (>=2.6.9)", "numpy (>=1.16.4)", "tables (>=3.5.2)"]
 http = ["aiohttp (>=3.6.2)", "requests"]
 interval = ["intervaltree (>=3.0.2)"]
 numpy = ["numpy (>=1.16.4)"]
@@ -1592,7 +1592,7 @@ python-versions = "*"
 six = "*"
 
 [package.extras]
-test = ["pytest (>=2.7.3)", "pytest-cov", "coveralls", "futures", "pytest-benchmark", "mock"]
+test = ["coveralls", "futures", "mock", "pytest (>=2.7.3)", "pytest-benchmark", "pytest-cov"]
 
 [[package]]
 name = "prompt-toolkit"
@@ -1732,9 +1732,9 @@ python-versions = ">=3.6"
 
 [package.extras]
 crypto = ["cryptography (>=3.3.1,<4.0.0)"]
-dev = ["sphinx", "sphinx-rtd-theme", "zope.interface", "cryptography (>=3.3.1,<4.0.0)", "pytest (>=6.0.0,<7.0.0)", "coverage[toml] (==5.0.4)", "mypy", "pre-commit"]
+dev = ["coverage[toml] (==5.0.4)", "cryptography (>=3.3.1,<4.0.0)", "mypy", "pre-commit", "pytest (>=6.0.0,<7.0.0)", "sphinx", "sphinx-rtd-theme", "zope.interface"]
 docs = ["sphinx", "sphinx-rtd-theme", "zope.interface"]
-tests = ["pytest (>=6.0.0,<7.0.0)", "coverage[toml] (==5.0.4)"]
+tests = ["coverage[toml] (==5.0.4)", "pytest (>=6.0.0,<7.0.0)"]
 
 [[package]]
 name = "pylint"
@@ -1777,7 +1777,7 @@ pylint = ">=2.0"
 pylint-plugin-utils = ">=0.5"
 
 [package.extras]
-for_tests = ["django-tables2", "factory-boy", "coverage", "pytest"]
+for_tests = ["coverage", "django-tables2", "factory-boy", "pytest"]
 with_django = ["django"]
 
 [[package]]
@@ -1860,7 +1860,7 @@ coverage = ">=5.2.1"
 pytest = ">=4.6"
 
 [package.extras]
-testing = ["fields", "hunter", "process-tests (==2.0.2)", "six", "pytest-xdist", "virtualenv"]
+testing = ["fields", "hunter", "process-tests (==2.0.2)", "pytest-xdist", "six", "virtualenv"]
 
 [[package]]
 name = "pytest-django"
@@ -1894,8 +1894,8 @@ jinja2 = "*"
 pytest = ">=4.4.0"
 
 [package.extras]
-dev = ["beautifulsoup4", "lxml", "sphinx", "sphinx-rtd-theme", "pre-commit", "mock"]
-test = ["pytest-xdist", "tox-travis", "codecov", "coverage", "beautifulsoup4", "lxml", "sphinx", "sphinx-rtd-theme", "pre-commit", "mock"]
+dev = ["beautifulsoup4", "lxml", "mock", "pre-commit", "sphinx", "sphinx-rtd-theme"]
+test = ["beautifulsoup4", "codecov", "coverage", "lxml", "mock", "pre-commit", "pytest-xdist", "sphinx", "sphinx-rtd-theme", "tox-travis"]
 
 [[package]]
 name = "pytest-forked"
@@ -1921,7 +1921,7 @@ python-versions = ">=3.6"
 pytest = ">=5.0"
 
 [package.extras]
-dev = ["pre-commit", "tox", "pytest-asyncio"]
+dev = ["pre-commit", "pytest-asyncio", "tox"]
 
 [[package]]
 name = "pytest-vcr"
@@ -2105,7 +2105,7 @@ idna = ">=2.5,<3"
 urllib3 = ">=1.21.1,<1.27"
 
 [package.extras]
-security = ["pyOpenSSL (>=0.14)", "cryptography (>=1.3.4)"]
+security = ["cryptography (>=1.3.4)", "pyOpenSSL (>=0.14)"]
 socks = ["PySocks (>=1.5.6,!=1.5.7)", "win-inet-pton"]
 
 [[package]]
@@ -2173,8 +2173,8 @@ celery = ["celery (>=3)"]
 chalice = ["chalice (>=1.16.0)"]
 django = ["django (>=1.8)"]
 falcon = ["falcon (>=1.4)"]
-flask = ["flask (>=0.11)", "blinker (>=1.1)"]
-pure_eval = ["pure-eval", "executing", "asttokens"]
+flask = ["blinker (>=1.1)", "flask (>=0.11)"]
+pure_eval = ["asttokens", "executing", "pure-eval"]
 pyspark = ["pyspark (>=2.4.4)"]
 rq = ["rq (>=0.6)"]
 sanic = ["sanic (>=0.8)"]
@@ -2193,8 +2193,8 @@ python-versions = ">=2.6"
 six = "*"
 
 [package.extras]
-docs = ["sphinx", "jaraco.packaging (>=8.2)", "rst.linker (>=1.9)"]
-testing = ["pytest (>=4.6)", "pytest-checkdocs (>=1.2.3)", "pytest-flake8", "pytest-cov", "pytest-black (>=0.3.7)", "unittest2"]
+docs = ["jaraco.packaging (>=8.2)", "rst.linker (>=1.9)", "sphinx"]
+testing = ["pytest (>=4.6)", "pytest-black (>=0.3.7)", "pytest-checkdocs (>=1.2.3)", "pytest-cov", "pytest-flake8", "unittest2"]
 
 [[package]]
 name = "six"
@@ -2314,7 +2314,7 @@ webencodings = ">=0.4"
 
 [package.extras]
 doc = ["sphinx", "sphinx-rtd-theme"]
-test = ["pytest", "pytest-cov", "pytest-flake8", "pytest-isort", "coverage"]
+test = ["coverage", "pytest", "pytest-cov", "pytest-flake8", "pytest-isort"]
 
 [[package]]
 name = "toml"
@@ -2352,7 +2352,7 @@ virtualenv = ">=16.0.0,<20.0.0 || >20.0.0,<20.0.1 || >20.0.1,<20.0.2 || >20.0.2,
 
 [package.extras]
 docs = ["pygments-github-lexers (>=0.0.5)", "sphinx (>=2.0.0)", "sphinxcontrib-autoprogram (>=0.1.5)", "towncrier (>=18.5.0)"]
-testing = ["flaky (>=3.4.0)", "freezegun (>=0.3.11)", "psutil (>=5.6.1)", "pytest (>=4.0.0)", "pytest-cov (>=2.5.1)", "pytest-mock (>=1.10.0)", "pytest-randomly (>=1.0.0)", "pytest-xdist (>=1.22.2)", "pathlib2 (>=2.3.3)"]
+testing = ["flaky (>=3.4.0)", "freezegun (>=0.3.11)", "pathlib2 (>=2.3.3)", "psutil (>=5.6.1)", "pytest (>=4.0.0)", "pytest-cov (>=2.5.1)", "pytest-mock (>=1.10.0)", "pytest-randomly (>=1.0.0)", "pytest-xdist (>=1.22.2)"]
 
 [[package]]
 name = "tqdm"
@@ -2427,9 +2427,9 @@ optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, <4"
 
 [package.extras]
-secure = ["pyOpenSSL (>=0.14)", "cryptography (>=1.3.4)", "idna (>=2.0.0)", "certifi", "ipaddress"]
-socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 brotli = ["brotlipy (>=0.6.0)"]
+secure = ["certifi", "cryptography (>=1.3.4)", "idna (>=2.0.0)", "ipaddress", "pyOpenSSL (>=0.14)"]
+socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 
 [[package]]
 name = "uvicorn"
@@ -2451,7 +2451,7 @@ watchgod = {version = ">=0.6", optional = true, markers = "extra == \"standard\"
 websockets = {version = ">=8.0.0,<9.0.0", optional = true, markers = "extra == \"standard\""}
 
 [package.extras]
-standard = ["websockets (>=8.0.0,<9.0.0)", "watchgod (>=0.6)", "python-dotenv (>=0.13)", "PyYAML (>=5.1)", "httptools (>=0.1.0,<0.2.0)", "uvloop (>=0.14.0,!=0.15.0,!=0.15.1)", "colorama (>=0.4)"]
+standard = ["PyYAML (>=5.1)", "colorama (>=0.4)", "httptools (>=0.1.0,<0.2.0)", "python-dotenv (>=0.13)", "uvloop (>=0.14.0,!=0.15.0,!=0.15.1)", "watchgod (>=0.6)", "websockets (>=8.0.0,<9.0.0)"]
 
 [[package]]
 name = "uvloop"
@@ -2462,9 +2462,9 @@ optional = false
 python-versions = ">=3.7"
 
 [package.extras]
-dev = ["Cython (>=0.29.20,<0.30.0)", "pytest (>=3.6.0)", "Sphinx (>=1.7.3,<1.8.0)", "sphinxcontrib-asyncio (>=0.2.0,<0.3.0)", "sphinx-rtd-theme (>=0.2.4,<0.3.0)", "aiohttp", "flake8 (>=3.8.4,<3.9.0)", "psutil", "pycodestyle (>=2.6.0,<2.7.0)", "pyOpenSSL (>=19.0.0,<19.1.0)", "mypy (>=0.800)"]
-docs = ["Sphinx (>=1.7.3,<1.8.0)", "sphinxcontrib-asyncio (>=0.2.0,<0.3.0)", "sphinx-rtd-theme (>=0.2.4,<0.3.0)"]
-test = ["aiohttp", "flake8 (>=3.8.4,<3.9.0)", "psutil", "pycodestyle (>=2.6.0,<2.7.0)", "pyOpenSSL (>=19.0.0,<19.1.0)", "mypy (>=0.800)"]
+dev = ["Cython (>=0.29.20,<0.30.0)", "Sphinx (>=1.7.3,<1.8.0)", "aiohttp", "flake8 (>=3.8.4,<3.9.0)", "mypy (>=0.800)", "psutil", "pyOpenSSL (>=19.0.0,<19.1.0)", "pycodestyle (>=2.6.0,<2.7.0)", "pytest (>=3.6.0)", "sphinx-rtd-theme (>=0.2.4,<0.3.0)", "sphinxcontrib-asyncio (>=0.2.0,<0.3.0)"]
+docs = ["Sphinx (>=1.7.3,<1.8.0)", "sphinx-rtd-theme (>=0.2.4,<0.3.0)", "sphinxcontrib-asyncio (>=0.2.0,<0.3.0)"]
+test = ["aiohttp", "flake8 (>=3.8.4,<3.9.0)", "mypy (>=0.800)", "psutil", "pyOpenSSL (>=19.0.0,<19.1.0)", "pycodestyle (>=2.6.0,<2.7.0)"]
 
 [[package]]
 name = "vcrpy"
@@ -2504,7 +2504,7 @@ six = ">=1.9.0,<2"
 
 [package.extras]
 docs = ["proselint (>=0.10.2)", "sphinx (>=3)", "sphinx-argparse (>=0.2.5)", "sphinx-rtd-theme (>=0.4.3)", "towncrier (>=19.9.0rc1)"]
-testing = ["coverage (>=4)", "coverage-enable-subprocess (>=1)", "flaky (>=3)", "pytest (>=4)", "pytest-env (>=0.6.2)", "pytest-freezegun (>=0.4.1)", "pytest-mock (>=2)", "pytest-randomly (>=1)", "pytest-timeout (>=1)", "packaging (>=20.0)", "xonsh (>=0.9.16)"]
+testing = ["coverage (>=4)", "coverage-enable-subprocess (>=1)", "flaky (>=3)", "packaging (>=20.0)", "pytest (>=4)", "pytest-env (>=0.6.2)", "pytest-freezegun (>=0.4.1)", "pytest-mock (>=2)", "pytest-randomly (>=1)", "pytest-timeout (>=1)", "xonsh (>=0.9.16)"]
 
 [[package]]
 name = "watchgod"
@@ -2542,7 +2542,7 @@ tinycss2 = ">=1.0.0"
 
 [package.extras]
 doc = ["sphinx", "sphinx-rtd-theme"]
-test = ["pytest-runner", "pytest-cov", "pytest-flake8", "pytest-isort"]
+test = ["pytest-cov", "pytest-flake8", "pytest-isort", "pytest-runner"]
 
 [[package]]
 name = "webencodings"
@@ -2583,7 +2583,7 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "1.1"
 python-versions = "~3.9"
-content-hash = "b7655263f2bd6d1dde6f044a00cd677753cbb002eb03fb9cbb1ac983aeff2d34"
+content-hash = "506fb39f1ef2239b15997f2a8fa45beb72825c335a8a45194f51594ba5f4d959"
 
 [metadata.files]
 adyen = [
@@ -2881,8 +2881,8 @@ django-mptt = [
     {file = "django_mptt-0.12.0-py2.py3-none-any.whl", hash = "sha256:63b421a054bceb7406582e2be876a80b3848a5106765baea1003696348ffd628"},
 ]
 django-phonenumber-field = [
-    {file = "django-phonenumber-field-5.1.0.tar.gz", hash = "sha256:9eda963ac15b363393f677cc084efd45c3bd97bb5a0cdb4a06409ac99e05dd4b"},
-    {file = "django_phonenumber_field-5.1.0-py3-none-any.whl", hash = "sha256:48724ba235ee8248a474204faa0934c5baf9536f429859d05cb131fbd6b1c695"},
+    {file = "django-phonenumber-field-6.4.0.tar.gz", hash = "sha256:72a3e7a3e7493bf2a12c07a3bc77ce89813acc16592bf04d0eee3b5a452097ed"},
+    {file = "django_phonenumber_field-6.4.0-py3-none-any.whl", hash = "sha256:a31b4f05ac0ff898661516c84940f83adb5cdcf0ae4b9b1d31bb8ad3ff345b58"},
 ]
 django-prices = [
     {file = "django-prices-2.2.0.tar.gz", hash = "sha256:cdbea06db683c589d4cf3ec48d4b2385000ddc4df6e641f48cea563e19f645a3"},
@@ -3207,6 +3207,8 @@ lxml = [
     {file = "lxml-4.6.3-cp27-cp27m-win_amd64.whl", hash = "sha256:8157dadbb09a34a6bd95a50690595e1fa0af1a99445e2744110e3dca7831c4ee"},
     {file = "lxml-4.6.3-cp27-cp27mu-manylinux1_i686.whl", hash = "sha256:7728e05c35412ba36d3e9795ae8995e3c86958179c9770e65558ec3fdfd3724f"},
     {file = "lxml-4.6.3-cp27-cp27mu-manylinux1_x86_64.whl", hash = "sha256:4bff24dfeea62f2e56f5bab929b4428ae6caba2d1eea0c2d6eb618e30a71e6d4"},
+    {file = "lxml-4.6.3-cp310-cp310-manylinux_2_12_i686.manylinux2010_i686.manylinux_2_24_i686.whl", hash = "sha256:64812391546a18896adaa86c77c59a4998f33c24788cadc35789e55b727a37f4"},
+    {file = "lxml-4.6.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl", hash = "sha256:c1a40c06fd5ba37ad39caa0b3144eb3772e813b5fb5b084198a985431c2f1e8d"},
     {file = "lxml-4.6.3-cp35-cp35m-manylinux1_i686.whl", hash = "sha256:74f7d8d439b18fa4c385f3f5dfd11144bb87c1da034a466c5b5577d23a1d9b51"},
     {file = "lxml-4.6.3-cp35-cp35m-manylinux1_x86_64.whl", hash = "sha256:f90ba11136bfdd25cae3951af8da2e95121c9b9b93727b1b896e3fa105b2f586"},
     {file = "lxml-4.6.3-cp35-cp35m-manylinux2010_i686.whl", hash = "sha256:4c61b3a0db43a1607d6264166b230438f85bfed02e8cff20c22e564d0faff354"},
